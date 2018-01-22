@@ -124,7 +124,7 @@ class Command(BaseCommand):
                     if get_template_sources is None:
                         get_template_sources = loader.get_template_sources
                     paths.update(smart_text(origin) for origin in get_template_sources(''))
-                except (ImportError, AttributeError, TypeError):
+                except (ImportError, AttributeError, TypeError, NotImplementedError):
                     # Yeah, this didn't work out so well, let's move on
                     pass
 
